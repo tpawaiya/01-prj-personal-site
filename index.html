@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Site</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Tushar Singh Pawaiya · Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Tushar Singh Pawaiya — web dev & software projects, skills, and experience." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- Simple Nav -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="logo" href="#hero">TSP</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#bio">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a class="cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <!-- Use the image if present; CSS provides gradient fallback -->
+    <img src="img/hero-bg.jpg" alt="Abstract background" class="hero-bg" />
+    <div class="hero-inner">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Web Development Student @ ASU • Front-end & Full-stack learner</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn">See Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio Section -->
+  <section id="bio" class="bio section">
+    <div class="container bio-grid">
+      <div class="bio-text">
+        <h2>About Me</h2>
+        <p>
+          Hello! I’m <strong>Tushar Singh Pawaiya</strong>, learning modern web development and building
+          a foundation in HTML, CSS, and JavaScript (with React/Node next). I enjoy shipping small,
+          useful projects and iterating fast.
+        </p>
+        <ul class="bio-highlights">
+          <li>Computer Science coursework @ Arizona State University</li>
+          <li>Hands-on with Git/GitHub & basic deployment (GitHub Pages)</li>
+          <li>Curious about data, UI, accessibility, and clean code</li>
+        </ul>
+      </div>
+      <figure class="bio-media">
+        <img src="img/me.png" alt="Photo of Tushar Singh Pawaiya" class="bio-img" />
+        <figcaption>Always learning, always shipping.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section alt">
+    <div class="container">
+      <h2>My Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (learning)</li>
+        <li>Git & GitHub</li>
+        <li>Basic Python/Java (from coursework)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Portfolio Projects Section -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <h2>Portfolio Projects</h2>
+      <div class="project-list">
+        <!-- Example project card -->
+        <article class="project-card">
+          <img src="img/laptop.jpg" alt="Screenshot placeholder" class="project-img" />
+          <h3>Starter Portfolio</h3>
+          <p>A simple responsive one-page portfolio with clean HTML/CSS and GitHub Pages deploy.</p>
+          <!-- ✅ Add repo link or live demo when ready -->
+          <!-- <a class="link" href="#" target="_blank" rel="noopener">View Repo</a> -->
+        </article>
+        <!-- Add more project cards as you build projects -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience (Resume highlights) -->
+  <section id="experience" class="experience section alt">
+    <div class="container">
+      <h2>Experience</h2>
+
+      <div class="xp">
+        <article class="xp-item">
+          <h3>Administrative Aide — Arizona State University</h3>
+          <div class="sub">Dec 2024 – Mar 2025 · Tempe, AZ</div>
+          <ul>
+            <li>Supported SGSUP operations, digital assets, and basic analytics dashboards.</li>
+            <li>Improved organization and response workflows with structured documentation.</li>
+          </ul>
+        </article>
+
+        <article class="xp-item">
+          <h3>Web Developer Intern — Modern Amusement Equipment Pvt. Ltd.</h3>
+          <div class="sub">May 2024 – Aug 2024 · India</div>
+          <ul>
+            <li>Contributed to a mobile-first site and learned fundamentals of JS/React and REST APIs.</li>
+            <li>Practiced performance basics (lazy load, compression) and GitHub CI.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact section">
+    <div class="container contact-card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:Tushar1903pawaiya@gmail.com">Tushar1903pawaiya@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tushar-singh-pawaiya/" target="_blank" rel="noopener">tushar-singh-pawaiya</a></p>
+      <!-- ✅ Add resume PDF if you want to link it publicly
+      <p>Resume: <a href="assets/Tushar_Pawaiya_Resume.pdf" target="_blank" rel="noopener">Download</a></p>
+      -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Tushar Singh Pawaiya</p>
+      <a class="top" href="#hero" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Year + mobile nav
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      links.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
+
